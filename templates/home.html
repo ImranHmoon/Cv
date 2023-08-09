@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+{% block title %} <title>Home</title> {% endblock %}
+
+{%block body%}
+
+
+<div class="container">
+    <div class="col">
+        <div class="row">
+            {%for i in Prof%}
+            <div class="card" style="margin-right:10px;margin-top:10px;width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{i.name}}</h5>
+                    <a href="{% url 'download' i.id%}" class="btn btn-primary">Download CV</a>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
